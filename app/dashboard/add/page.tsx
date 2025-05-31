@@ -48,14 +48,13 @@ export default function AddUser() {
     }));
 
     // Clear error when user types
-    if (errors[name]) {
+ if (errors[name as keyof typeof errors]) {
       setErrors((prev) => ({
         ...prev,
         [name]: "",
       }));
     }
   };
-
   // Validate basic info step
   const validateBasicInfo = () => {
     let isValid = true;
